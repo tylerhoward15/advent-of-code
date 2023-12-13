@@ -1,7 +1,7 @@
 import re
 
 
-f = open("input.txt", "r")
+f = open("../input.txt", "r")
 txt = f.read()
 f.close()
 
