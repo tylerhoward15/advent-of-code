@@ -9,8 +9,8 @@ def read_input():
 
     for line in f:
         match = re.search(pattern, line)
-        hand = match[1]
-        bid = int(match[2])
+        hand = match[1] if match else None
+        bid = int(match[2]) if match else None
 
         player = {
             'hand': hand,
@@ -21,7 +21,7 @@ def read_input():
         players.append(player)
     f.close()
 
-def get_freq_map(hand) -> {}:
+def get_freq_map(hand) -> dict:
     freq = {}
     for char in hand:
         if char in freq:
